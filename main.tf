@@ -65,7 +65,7 @@ data "aws_caller_identity" "default" {}
 
 module "kms_key" {
   source  = "blackbird-cloud/kms-key/aws"
-  version = "~> 0"
+  version = ">= 1.0.1"
 
   name   = var.name
   policy = <<EOF
@@ -162,7 +162,7 @@ data "aws_organizations_organization" "default" {}
 
 module "bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "~> 3"
+  version = "~> 4"
 
   bucket_prefix = var.name
 
