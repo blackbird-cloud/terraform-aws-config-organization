@@ -1,4 +1,18 @@
+# Terraform Aws Config Organization Module
+Terraform module to setup AWS Config in an organization
+
 [![blackbird-logo](https://raw.githubusercontent.com/blackbird-cloud/terraform-module-template/main/.config/logo_simple.png)](https://blackbird.cloud)
+
+## Example
+```hcl
+module "config" {
+  source  = "blackbird-cloud/config-organization/aws"
+  version = "~> 2"
+
+  s3_bucket_name = "my-bucket"
+  role_arn       = "arn:aws:iam::123456789101:role/my-role"
+}
+```
 
 ## Requirements
 
@@ -11,11 +25,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.47.0 |
-
-## Modules
-
-No modules.
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4 |
 
 ## Resources
 
@@ -49,4 +59,4 @@ Checkout our other :point\_right: [terraform modules](https://registry.terraform
 
 ## Copyright
 
-Copyright © 2017-2023 [Blackbird Cloud](https://blackbird.cloud)
+Copyright © 2017-2024 [Blackbird Cloud](https://blackbird.cloud)
