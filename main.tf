@@ -7,6 +7,7 @@ resource "aws_config_organization_conformance_pack" "default" {
   depends_on      = [aws_config_configuration_recorder.default]
 
   timeouts {
+    create = "15m"
     update = "5m"
   }
 }
