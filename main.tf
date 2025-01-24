@@ -5,6 +5,11 @@ resource "aws_config_organization_conformance_pack" "default" {
   template_s3_uri = try(each.value.template_s3_uri, null)
   template_body   = try(each.value.template_body, null)
   depends_on      = [aws_config_configuration_recorder.default]
+
+  timeouts {
+    create = "15m"
+    update = "5m"
+  }
 }
 
 resource "aws_config_configuration_recorder" "default" {
