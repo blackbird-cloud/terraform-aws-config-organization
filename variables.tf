@@ -25,3 +25,9 @@ variable "role_arn" {
   type        = string
   description = "The ARN of the IAM role to use for this configuration recorder."
 }
+
+variable "recording_frequency" {
+  type        = string
+  description = "The recording frequency for the resources in the override block. CONTINUOUS or DAILY."
+  default     = "DAILY"
+}

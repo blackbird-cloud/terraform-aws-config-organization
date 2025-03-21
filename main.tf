@@ -20,6 +20,10 @@ resource "aws_config_configuration_recorder" "default" {
     all_supported                 = true
     include_global_resource_types = true
   }
+
+  recording_mode {
+    recording_frequency = var.recording_frequency
+  }
 }
 
 resource "aws_config_configuration_aggregator" "organization" {
